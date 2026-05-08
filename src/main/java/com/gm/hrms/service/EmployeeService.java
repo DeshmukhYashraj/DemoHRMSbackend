@@ -25,21 +25,6 @@ public interface EmployeeService {
 
     EmployeeResponseDTO getById(Long id);
 
-    /**
-     * Paginated, filtered, sorted list.
-     *
-     * @param page           0-based page index
-     * @param size           page size
-     * @param search         free-text (name / email / code)
-     * @param status         ACTIVE | INACTIVE | ON_HOLD  (null → all)
-     * @param employmentType EMPLOYEE | INTERN | TRAINEE  (null → all)
-     * @param department     department name              (null → all)
-     * @param dateFrom       ISO date string              (null → no lower bound)
-     * @param dateTo         ISO date string              (null → no upper bound)
-     * @param sortBy         id | name | joiningDate
-     * @param sortDir        asc | desc
-     * @param recordStatus   DRAFT | SUBMITTED            (null → SUBMITTED)
-     */
     EmployeeListResponseDTO getAll(
             int    page,
             int    size,
@@ -54,7 +39,6 @@ public interface EmployeeService {
             RecordStatus recordStatus
     );
 
-    /** Update only the work-profile status (Active / Inactive / On Hold) */
     void updateStatus(Long id, EmployeeStatusUpdateDTO dto);
 
     /** Soft delete – ADMIN only */

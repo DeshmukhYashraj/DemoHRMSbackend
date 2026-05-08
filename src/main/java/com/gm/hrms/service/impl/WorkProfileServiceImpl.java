@@ -40,34 +40,34 @@ public class WorkProfileServiceImpl implements WorkProfileService {
         // ================= REQUIRED VALIDATION (ONLY SUBMIT) =================
 
         if (!isDraft) {
+//
+//            if (dto.getDepartmentId() == null) {
+//                throw new InvalidRequestException("Department is required");
+//            }
 
-            if (dto.getDepartmentId() == null) {
-                throw new InvalidRequestException("Department is required");
-            }
+//            if (dto.getDesignationId() == null) {
+//                throw new InvalidRequestException("Designation is required");
+//            }
+//
+//            if (dto.getBranchId() == null) {
+//                throw new InvalidRequestException("Branch is required");
+//            }
 
-            if (dto.getDesignationId() == null) {
-                throw new InvalidRequestException("Designation is required");
-            }
-
-            if (dto.getBranchId() == null) {
-                throw new InvalidRequestException("Branch is required");
-            }
-
-            if (dto.getShiftId() == null) {
-                throw new InvalidRequestException("Shift is required");
-            }
-
-            if (dto.getWorkMode() == null) {
-                throw new InvalidRequestException("Work mode is required");
-            }
-
-            if (dto.getWorkingType() == null) {
-                throw new InvalidRequestException("Working type is required");
-            }
-
-            if (dto.getStatus() == null) {
-                throw new InvalidRequestException("Status is required");
-            }
+//            if (dto.getShiftId() == null) {
+//                throw new InvalidRequestException("Shift is required");
+//            }
+//
+//            if (dto.getWorkMode() == null) {
+//                throw new InvalidRequestException("Work mode is required");
+//            }
+//
+//            if (dto.getWorkingType() == null) {
+//                throw new InvalidRequestException("Working type is required");
+//            }
+//
+//            if (dto.getStatus() == null) {
+//                throw new InvalidRequestException("Status is required");
+//            }
         }
 
         // ================= FETCH REFERENCES =================

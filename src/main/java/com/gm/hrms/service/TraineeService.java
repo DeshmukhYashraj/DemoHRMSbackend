@@ -1,26 +1,19 @@
 package com.gm.hrms.service;
 
 import com.gm.hrms.dto.request.TraineeRequestDTO;
-import com.gm.hrms.dto.request.TraineeUpdateDTO;
 import com.gm.hrms.dto.response.PageResponseDTO;
 import com.gm.hrms.dto.response.TraineeResponseDTO;
 import com.gm.hrms.dto.response.UserCreateResponseDTO;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.List;
 import java.util.Map;
 
 public interface TraineeService {
 
-    // ================= CREATE =================
-    UserCreateResponseDTO create(
-            TraineeRequestDTO dto,
-            Long personalInformationId
-    );
+    UserCreateResponseDTO create(TraineeRequestDTO dto, Long personalInformationId);
 
-    // ================= UPDATE (WITH DOCUMENTS) =================
-    public TraineeResponseDTO update(
+    TraineeResponseDTO update(
             Long id,
             String traineeJson,
             MultipartFile profileImage,
@@ -28,10 +21,9 @@ public interface TraineeService {
             Map<String, String> reasons
     ) throws Exception;
 
-    // ================= GET =================
     TraineeResponseDTO getById(Long id);
 
     PageResponseDTO<TraineeResponseDTO> getAll(Pageable pageable);
-    // ================= DELETE =================
+
     void delete(Long id);
 }

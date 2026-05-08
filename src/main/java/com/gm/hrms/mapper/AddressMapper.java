@@ -14,7 +14,7 @@ public class AddressMapper {
         if (dto == null) return null; //  safety
 
         return Address.builder()
-                .address(dto.getAddress())
+                .addressLine(dto.getAddressLine())
                 .city(dto.getCity())
                 .district(dto.getDistrict())
                 .landmark(dto.getLandmark())
@@ -29,8 +29,8 @@ public class AddressMapper {
 
         if (entity == null || dto == null) return; //  safety
 
-        if (dto.getAddress() != null)
-            entity.setAddress(dto.getAddress());
+        if (dto.getAddressLine() != null)
+            entity.setAddressLine(dto.getAddressLine());
 
         if (dto.getCity() != null)
             entity.setCity(dto.getCity());
@@ -58,7 +58,7 @@ public class AddressMapper {
 
         return AddressResponseDTO.builder()
                 .id(entity.getId())
-                .address(entity.getAddress())
+                .address(entity.getAddressLine())
                 .city(entity.getCity())
                 .district(entity.getDistrict())
                 .landmark(entity.getLandmark())

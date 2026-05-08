@@ -6,8 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface TraineeEducationRepository
-        extends JpaRepository<TraineeEducationDetails, Long> {
-
+public interface TraineeEducationRepository extends JpaRepository<TraineeEducationDetails, Long> {
     Optional<TraineeEducationDetails> findByTrainee(Trainee trainee);
 }

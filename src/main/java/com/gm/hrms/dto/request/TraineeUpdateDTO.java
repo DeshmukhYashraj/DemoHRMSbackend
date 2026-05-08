@@ -1,21 +1,22 @@
 package com.gm.hrms.dto.request;
 
-import com.gm.hrms.enums.Status;
 import jakarta.validation.Valid;
 import lombok.Data;
 
 @Data
 public class TraineeUpdateDTO {
 
+    private String traineeCode;
 
     @Valid
     private PersonalInformationRequestDTO personalInformation;
 
-    private Double stipend;
-
-    private  String traineeCode;
     @Valid
-    private TraineeWorkDetailsRequestDTO workDetails;
+    private TraineeTrainingRequestDTO trainingDetails;
+
     @Valid
     private TraineeEducationRequestDTO educationDetails;
+
+    @Valid
+    private TraineeMentorRequestDTO mentorDetails;
 }

@@ -57,9 +57,9 @@ public class AddressServiceImpl implements AddressService {
      */
     public void validateForSubmit(Address existing, AddressRequestDTO dto) {
 
-        String addressLine = dto != null && dto.getAddress() != null
-                ? dto.getAddress()
-                : (existing != null ? existing.getAddress() : null);
+        String addressLine = dto != null && dto.getAddressLine() != null
+                ? dto.getAddressLine()
+                : (existing != null ? existing.getAddressLine() : null);
 
         String city = dto != null && dto.getCity() != null
                 ? dto.getCity()

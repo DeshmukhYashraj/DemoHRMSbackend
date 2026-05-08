@@ -37,9 +37,6 @@ public class PersonalInformationServiceImpl implements PersonalInformationServic
 
 
 
-
-
-
     // ================= CREATE =================
 
     @Override
@@ -154,20 +151,23 @@ public class PersonalInformationServiceImpl implements PersonalInformationServic
             throw new InvalidRequestException("Work Profile data required");
         }
 
+        // ── WORK PROFILE ─────────────────────────────────────────────────────────
         if (dto.getWorkProfile() != null) {
             WorkProfile wp;
 
             if (entity.getWorkProfile() != null) {
-                 workProfileService.update(entity.getWorkProfile().getId(), dto.getWorkProfile());
-
-                 wp=workProfileRepository.findById(entity.getWorkProfile().getId()).get();
+                workProfileService.update(entity.getWorkProfile().getId(), dto.getWorkProfile());
+                wp = workProfileRepository.findById(entity.getWorkProfile().getId())
+                        .orElseThrow(() -> new ResourceNotFoundException("Work profile not found"));
             } else {
                 workProfileService.create(entity.getId(), dto.getWorkProfile());
-                wp=workProfileRepository.findById(entity.getWorkProfile().getId()).get();
+
+                wp = workProfileRepository.findByPersonalInformationId(entity.getId())
+                        .orElseThrow(() -> new ResourceNotFoundException(
+                                "Work profile not found after creation"));
             }
 
             entity.setWorkProfile(wp);
-
         }
 
 

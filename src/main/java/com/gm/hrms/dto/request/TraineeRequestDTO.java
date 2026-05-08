@@ -1,12 +1,17 @@
 package com.gm.hrms.dto.request;
 
+import jakarta.validation.Valid;
 import lombok.Data;
 
 @Data
 public class TraineeRequestDTO {
 
-    private Double stipend;
+    @Valid
+    private TraineeTrainingRequestDTO trainingDetails;
 
-    private TraineeWorkDetailsRequestDTO workDetails;
+    @Valid
     private TraineeEducationRequestDTO educationDetails;
+
+    @Valid
+    private TraineeMentorRequestDTO mentorDetails;
 }
